@@ -8,9 +8,10 @@ import {
 import Header from '../components/header'
 import Login from '../screens/Login'
 import Home from '../screens/Home'
-// import CharactersDetails from '../components/CharactersDetails'
 import PrivateRoute from './PrivateRoute'
-// import Favoris from '../screens/Favoris'
+import Favoris from '../screens/Favoris'
+import Soon from '../screens/Soon'
+import Albums from '../screens/Albums'
 
 const Routes = () => {
   const token = localStorage.getItem('token')
@@ -23,6 +24,10 @@ const Routes = () => {
       <Switch>
         <Route path='/' exact component={Login} />
         <PrivateRoute path='/home' component={Home} exact />
+        <PrivateRoute path='/albums' component={Albums} exact />
+        <PrivateRoute path='/favoris' component={Favoris} exact />
+        <PrivateRoute path='/soon' component={Soon} exact />
+
         {/* <PrivateRoute
           path='/characters/:id'
           component={CharactersDetails}
