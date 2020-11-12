@@ -1,5 +1,9 @@
 import axios from 'axios'
-// import Instance from './axios-deezer'
+import Instance from './axios-anime'
+
+const getEpisodesList = () => {
+  return Instance.get(`anime/154/episodes`)
+}
 
 // const getMangaList = () => {
 //   return Instance.get(`manga/50/characters`);
@@ -17,4 +21,4 @@ const connect = data => {
   return axios.post('https://easy-login-api.herokuapp.com/users/login', data)
 }
 
-export { connect }
+export { connect, getEpisodesList }
