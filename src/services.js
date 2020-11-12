@@ -5,6 +5,10 @@ const getEpisodesList = () => {
   return Instance.get(`anime/154/episodes`)
 }
 
+const getCharactersList = () => {
+  return Instance.get(`anime/154/characters_staff`)
+}
+
 // const getMangaList = () => {
 //   return Instance.get(`manga/50/characters`);
 // };
@@ -21,4 +25,4 @@ const connect = data => {
   return axios.post('https://easy-login-api.herokuapp.com/users/login', data)
 }
 
-export { connect, getEpisodesList }
+export { connect, getEpisodesList, getCharactersList }

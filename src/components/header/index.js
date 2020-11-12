@@ -11,6 +11,9 @@ const Header = () => (
       <Link to='/episodes'>
         <li>Episodes</li>
       </Link>
+      <Link to='/characters'>
+        <li>Characters</li>
+      </Link>
       <Link to='/favoris'>
         <li>Favoris</li>
       </Link>

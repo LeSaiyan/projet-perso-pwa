@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute'
 import Favoris from '../screens/Favoris'
 import Soon from '../screens/Soon'
 import Episodes from '../screens/Episodes'
+import Characters from '../screens/Characters'
 
 const Routes = () => {
   const token = localStorage.getItem('token')
@@ -25,6 +26,7 @@ const Routes = () => {
         <Route path='/' exact component={Login} />
         <PrivateRoute path='/home' component={Home} exact />
         <PrivateRoute path='/episodes' component={Episodes} exact />
+        <PrivateRoute path='/characters' component={Characters} exact />
         <PrivateRoute path='/favoris' component={Favoris} exact />
         <PrivateRoute path='/soon' component={Soon} exact />
 
