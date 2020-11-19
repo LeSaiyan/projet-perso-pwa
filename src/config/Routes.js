@@ -17,11 +17,9 @@ import CharacterDetails from '../screens/CharacterDetails'
 const Routes = () => {
   const token = localStorage.getItem('token')
 
-  const isLoggedIn = token
-
   return (
     <Router>
-      {isLoggedIn ? <Header /> : null}
+      {token ? <Header /> : null}
       <Switch>
         <Route path='/' exact component={Login} />
         <PrivateRoute path='/home' component={Home} exact />

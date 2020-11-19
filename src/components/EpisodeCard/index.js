@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Image from '../../assets/img/c56c5b07d4a5ef46bbc30a1bf27fce15.png'
@@ -8,9 +8,6 @@ import { toggleFavoritesEpisodes } from '../../actions/favorites'
 
 const EpisodeCard = props => {
   const dispatch = useDispatch()
-  useEffect(() => {
-    // console.log(props)
-  }, [])
   return (
     <DivStyled id={props.id}>
       <ImgStyled src={Image} />
@@ -19,7 +16,7 @@ const EpisodeCard = props => {
         <LiStyled>{props.title_japanese}</LiStyled>
       </InfoContainerStyled>
       <Button
-        text='add'
+        text='Fav'
         submit={() => dispatch(toggleFavoritesEpisodes(props))}
       />
     </DivStyled>
