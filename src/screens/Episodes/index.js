@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { getEpisodesList } from '../../services'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import EpisodesList from '../../components/EpisodesList'
 import Background from '../../assets/img/background.jpg'
+import { useDispatch, useSelector } from 'react-redux'
+import { getEpisodes } from '../../actions/episodes'
 
 const index = () => {
-  const [episodes, setEpisodes] = useState([])
-
+  const dispatch = useDispatch()
+  const episodes = useSelector(state => state.episodes.episodesList)
   useEffect(() => {
-    getEpisodesList().then(res => {
-      const items = res.data.episodes
-      setEpisodes(items)
-    })
+    dispatch(getEpisodes())
   }, [])
 
   return (

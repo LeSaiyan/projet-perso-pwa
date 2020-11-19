@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react'
-// import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { getCharactersList } from '../../services'
 import CharactersList from '../../components/CharactersList'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCharacters } from '../../actions/characters'
 
 const Characters = () => {
-  const [characters, setCharacters] = useState([])
-
+  const dispatch = useDispatch()
+  const characters = useSelector(state => state.characters.charactersList)
   useEffect(() => {
-    getCharactersList().then(res => {
-      const items = res.data.characters
-      setCharacters(items)
-    })
+    dispatch(getCharacters())
   }, [])
 
   return (
     <DivStyled>
-      <CharactersList charactersList={characters}></CharactersList>
+      <CharactersList charactersList={characters} />
     </DivStyled>
   )
 }

@@ -13,6 +13,7 @@ import Favoris from '../screens/Favoris'
 import Soon from '../screens/Soon'
 import Episodes from '../screens/Episodes'
 import Characters from '../screens/Characters'
+import CharacterDetails from '../screens/CharacterDetails'
 
 const Routes = () => {
   const token = localStorage.getItem('token')
@@ -29,13 +30,11 @@ const Routes = () => {
         <PrivateRoute path='/characters' component={Characters} exact />
         <PrivateRoute path='/favoris' component={Favoris} exact />
         <PrivateRoute path='/soon' component={Soon} exact />
-
-        {/* <PrivateRoute
+        <PrivateRoute
           path='/characters/:id'
-          component={CharactersDetails}
+          component={CharacterDetails}
           exact
         />
-        <PrivateRoute path='/favoris' component={Favoris} exact /> */}
         <Redirect to='/'></Redirect>
       </Switch>
     </Router>

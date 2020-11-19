@@ -7,9 +7,10 @@ const CharactersList = props => {
   return (
     <DivStyled>
       <UlStyled>
-        {props.charactersList.map(character => (
+        {props.charactersList.map((character, index) => (
           <CharacterCard
-            key={character.mal_id}
+            key={index}
+            id={character.mal_id}
             name={character.name}
             image={character.image_url}
           />

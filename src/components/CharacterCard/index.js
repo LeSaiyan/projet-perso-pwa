@@ -1,17 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const CharacterCard = props => {
   return (
     <DivStyled>
-      <ImgStyled src={props.image} />
-      <PStyled>{props.name}</PStyled>
+      <Link to={`/characters/${props.id}`}>
+        <ImgStyled src={props.image} />
+        <PStyled>{props.name}</PStyled>
+      </Link>
     </DivStyled>
   )
 }
 
 CharacterCard.propTypes = {
+  id: PropTypes.number,
   name: PropTypes.string,
   image: PropTypes.string
 }

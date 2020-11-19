@@ -7,11 +7,12 @@ const EpisodesList = props => {
   return (
     <DivStyled>
       <UlStyled>
-        {props.episodeList.map(episode => (
+        {props.episodeList.map((episode, index) => (
           <EpisodeCard
-            key={episode.episode_id}
+            key={index}
+            id={episode.episode_id || episode.id}
             title={episode.title}
-            japTitle={episode.title_japanese}
+            title_japanese={episode.title_japanese}
           />
         ))}
       </UlStyled>

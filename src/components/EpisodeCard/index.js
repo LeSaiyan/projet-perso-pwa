@@ -2,22 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Image from '../../assets/img/c56c5b07d4a5ef46bbc30a1bf27fce15.png'
+import Button from '../Button'
+import { useDispatch } from 'react-redux'
+import { toggleFavoritesEpisodes } from '../../actions/favorites'
 
 const EpisodeCard = props => {
+  const dispatch = useDispatch()
   return (
-    <DivStyled>
+    <DivStyled id={props.id}>
       <ImgStyled src={Image} />
       <InfoContainerStyled>
         <LiStyled>{props.title}</LiStyled>
-        <LiStyled>{props.japTitle}</LiStyled>
+        <LiStyled>{props.title_japanese}</LiStyled>
       </InfoContainerStyled>
+      <Button
+        text='add'
+        submit={() => dispatch(toggleFavoritesEpisodes(props))}
+      />
     </DivStyled>
   )
 }
 
 EpisodeCard.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
-  japTitle: PropTypes.string
+  title_japanese: PropTypes.string
 }
 
 const ImgStyled = styled.img`
