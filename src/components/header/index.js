@@ -17,9 +17,6 @@ const Header = () => (
       <Link to='/favoris'>
         <li>Favoris</li>
       </Link>
-      <Link to='/soon'>
-        <li>Soon</li>
-      </Link>
     </UlStyled>
   </NavStyled>
 )

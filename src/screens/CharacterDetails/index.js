@@ -1,8 +1,7 @@
-import React, { useEffect, useSelector } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-// import CharacterDetails from '../../components/EpisodesList'
-import Background from '../../assets/img/background.jpg'
-import { useDispatch } from 'react-redux'
+import CharacterDetails from '../../components/CharactersDetails'
+import { useDispatch, useSelector } from 'react-redux'
 import { getCharacter } from '../../actions/characters'
 
 const index = props => {
@@ -14,14 +13,15 @@ const index = props => {
     console.log(character)
   }, [])
 
-  return <DivStyled>{/* <CharacterDetails details={character} /> */}</DivStyled>
+  return (
+    <DivStyled>
+      {character ? <CharacterDetails details={character} /> : null}
+    </DivStyled>
+  )
 }
 
 const DivStyled = styled.div`
-  background: url(${Background});
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: white;
 `
 
 export default index

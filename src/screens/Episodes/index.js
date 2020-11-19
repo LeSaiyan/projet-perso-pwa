@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import EpisodesList from '../../components/EpisodesList'
-import Background from '../../assets/img/background.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { getEpisodes } from '../../actions/episodes'
 
@@ -14,16 +13,20 @@ const index = () => {
 
   return (
     <DivStyled>
-      <EpisodesList episodeList={episodes} />
+      {episodes.length > 0 ? (
+        <EpisodesList episodeList={episodes} />
+      ) : (
+        <DivPasDeConnexionStyled>Pas de connexion</DivPasDeConnexionStyled>
+      )}
     </DivStyled>
   )
 }
 
 const DivStyled = styled.div`
-  background: url(${Background});
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #f7ede3;
+`
+const DivPasDeConnexionStyled = styled.p`
+  background-color: white;
 `
 
 export default index

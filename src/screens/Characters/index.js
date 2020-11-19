@@ -19,6 +19,8 @@ const Characters = () => {
 }
 
 Characters.propTypes = {}
-const DivStyled = styled.div``
+const DivStyled = styled.div`
+  background-color: #f7ede3;
+`
 
 export default Characters

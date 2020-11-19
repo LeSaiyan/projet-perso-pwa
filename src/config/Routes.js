@@ -10,7 +10,6 @@ import Login from '../screens/Login'
 import Home from '../screens/Home'
 import PrivateRoute from './PrivateRoute'
 import Favoris from '../screens/Favoris'
-import Soon from '../screens/Soon'
 import Episodes from '../screens/Episodes'
 import Characters from '../screens/Characters'
 import CharacterDetails from '../screens/CharacterDetails'
@@ -29,7 +28,6 @@ const Routes = () => {
         <PrivateRoute path='/episodes' component={Episodes} exact />
         <PrivateRoute path='/characters' component={Characters} exact />
         <PrivateRoute path='/favoris' component={Favoris} exact />
-        <PrivateRoute path='/soon' component={Soon} exact />
         <PrivateRoute
           path='/characters/:id'
           component={CharacterDetails}

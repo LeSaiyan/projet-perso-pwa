@@ -7,19 +7,18 @@ const initialState = {
 const favoritesReducers = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FAVORITES: {
-      console.log(action.payload)
-      let favorites = state.favoritesEpisodes
-      const favorite = action.payload
-      let index = favorites.findIndex(i => i.id === favorite.id)
-      if (index === -1) {
-        favorites.push(favorite)
-      } else if (index > -1) {
-        favorites.splice(index, 1)
+      let index = state.favoritesEpisodes.findIndex(
+        i => i.id === action.payload.id
+      )
+      let newFav
+      if (index === -1) newFav = [...state.favoritesEpisodes, action.payload]
+      else {
+        newFav = state.favoritesEpisodes.filter(e => e.id != action.payload.id)
       }
-      console.log(favorites)
+
       return {
         ...state,
-        favoritesEpisodes: favorites
+        favoritesEpisodes: newFav
       }
     }
     default:

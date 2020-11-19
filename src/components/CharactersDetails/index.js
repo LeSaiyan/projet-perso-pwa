@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const CharactersDetails = props => {
+  console.log(props)
   return (
     <DivStyled>
-      <TitleStyled>{props.name}</TitleStyled>
-      <ImgStyled src={props.image_url} />
-      <AboutStyled>{props.about}</AboutStyled>
+      <TitleStyled>{props.details.name}</TitleStyled>
+      <ImgStyled src={props.details.image_url} />
+      <AboutStyled>{props.details.about}</AboutStyled>
     </DivStyled>
   )
 }
 
 CharactersDetails.propTypes = {
+  details: PropTypes.object,
   about: PropTypes.string,
   name: PropTypes.string,
   image_url: PropTypes.string

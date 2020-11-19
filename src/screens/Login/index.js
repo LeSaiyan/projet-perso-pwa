@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import background from '../../assets/img/Ateyaba1-1440x1183resize.jpg'
+import background from '../../assets/img/background.jpg'
 import LoginForm from '../../components/LoginForm'
 import PropTypes from 'prop-types'
 

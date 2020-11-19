@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Image from '../../assets/img/c56c5b07d4a5ef46bbc30a1bf27fce15.png'
@@ -8,6 +8,9 @@ import { toggleFavoritesEpisodes } from '../../actions/favorites'
 
 const EpisodeCard = props => {
   const dispatch = useDispatch()
+  useEffect(() => {
+    // console.log(props)
+  }, [])
   return (
     <DivStyled id={props.id}>
       <ImgStyled src={Image} />
@@ -41,6 +44,7 @@ const DivStyled = styled.div`
   padding: 10px;
   background-color: white;
   margin: 5% auto;
+  justify-content: space-between;
 `
 const InfoContainerStyled = styled.div`
   list-style: none;

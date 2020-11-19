@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import EpisodesList from '../../components/EpisodesList'
-import Background from '../../assets/img/background.jpg'
-import { useDispatch, useSelector } from 'react-redux'
-import { getEpisodes } from '../../actions/episodes'
+import { useSelector } from 'react-redux'
 
 const Favorites = () => {
-  const dispatch = useDispatch()
-  const episodes = useSelector(state => state.favorites.favoritesEpisodes)
-  useEffect(() => {
-    dispatch(getEpisodes())
-  }, [])
+  let episodes = useSelector(state => state.favorites.favoritesEpisodes)
 
   return (
     <DivStyled>
@@ -20,10 +14,9 @@ const Favorites = () => {
 }
 
 const DivStyled = styled.div`
-  background: url(${Background});
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #f7ede3;
+  min-height: 100vh;
+  height: auto;
 `
 
 export default Favorites
