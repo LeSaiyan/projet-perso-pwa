@@ -1,7 +1,8 @@
-import { DISPLAY_CHARACTERS } from '../actions/characters'
+import { DISPLAY_CHARACTERS, DISPLAY_CHARACTER } from '../actions/characters'
 
 const initialState = {
-  charactersList: []
+  charactersList: [],
+  characterDetails: []
 }
 
 export default (state = initialState, action) => {
@@ -11,6 +12,12 @@ export default (state = initialState, action) => {
         ...state,
         charactersList: action.payload
       }
+    case DISPLAY_CHARACTER:
+      return {
+        ...state,
+        characterDetails: action.payload
+      }
+
     default:
       return state
   }

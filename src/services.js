@@ -13,9 +13,9 @@ const getCharactersList = () => {
 //   return Instance.get(`manga/50/characters`);
 // };
 
-// const getCharacterDetails = (id) => {
-//   return Instance.get(`character/${id}`);
-// };
+const getCharacterDetails = id => {
+  return Instance.get(`character/${id}`)
+}
 
 // const searchCharacters = (name) => {
 //   return Instance.get(`search/character?q=${name}`);
@@ -25,4 +25,4 @@ const connect = data => {
   return axios.post('https://easy-login-api.herokuapp.com/users/login', data)
 }
 
-export { connect, getEpisodesList, getCharactersList }
+export { connect, getEpisodesList, getCharactersList, getCharacterDetails }
